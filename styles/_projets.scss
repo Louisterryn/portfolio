@@ -1,0 +1,74 @@
+.btn {
+  @include flex(space-around, center, row);
+  width: 50%;
+  margin:6rem auto;
+  flex-wrap: wrap;
+
+  button {
+    padding: 2rem;
+    margin: 2rem;
+    border: solid black;
+    background: rgba($color: #171b50, $alpha: 0.7);
+    color: white;
+    border-radius: 20px;
+    min-width: 20%;
+    cursor: pointer;
+
+    &:hover {
+
+      background: $gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+}
+
+.showText {
+  min-height: 70vh;
+  @include flex(center, center, row);
+  flex-wrap: wrap;
+  background: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects {
+  width: 90%;
+  margin: -10rem auto;
+  min-height: 90vh;
+  @include flex(space-between, center, row);
+  text-align: center;
+  flex-wrap: wrap;
+
+  h2 {
+    margin: 5rem;
+  }
+}
+.travelly {
+  flex: 1 1 40rem;
+  text-align: center;
+  margin-top: 2rem;
+  transition: all .2s ease-in-out; 
+  &:hover { transform: scale(1.1); }
+}
+
+.appVue img{
+  max-width: 604px;
+  max-height: 485px;
+  object-fit: cover;
+}
+.adobe {
+  @include flex(center,center,row);
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+}
+.adobe img{
+  margin: 2rem;
+  max-width: 250px;
+  max-height: 350px;
+  object-fit: cover;
+}

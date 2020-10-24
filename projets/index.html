@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content=">Nathan TURPIN cv projets portfolio" />
+    <meta name="robots" content="index,follow" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>Nathan TURPIN | Web Developer</title>
+</head>
+
+<body>
+    <header class="main-head">
+        <nav>
+            <div class="logo">
+                <img src="../icons/code.svg" alt="logo" />
+                <a href="http://www.nathanturpin.com">
+                    <h1>Nathan TURPIN</h1>
+                </a>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a class="active" href="#">Projects</a></li>
+                <li><a href="../contact/index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="app">
+        <div class="btn">
+            <a href="#site"><button @click=siteWeb()> Site Web </button></a>
+            <a href="#appVue"><button @click=appVue()> App Vue JS </button></a>
+            <a href="#adobeID"><button @click=adobe()>Adobe </button></a>
+            <a href="#cm"><button @click=cm()> CM </button></a>
+
+
+        </div>
+
+        <section class="showText" v-show='!toggle & !appVueToggle & !adobeToggle & !cmToggle'>
+            <h2>Cliquez sur ce que vous voulez decouvrir !</h2>
+        </section>
+
+        <section class="projects" id="site" v-if="toggle">
+            <div class="travelly">
+                <h2>Site CV</h2>
+                <a href="http://www.nathanturpin.com/" target="_blank"><img src="../img/travelly.jpg"
+                        alt="travelly-project" /></a>
+            </div>
+            <div class="travelly">
+                <h2>Site vitrine </h2>
+                <a href="http://www.sitevitrine1.nathanturpin.com" target="_blank"><img src="../img/elena-joy.jpg"
+                        alt="elena-project" /></a>
+            </div>
+            <div class="travelly">
+                <h2>Site maquette </h2>
+                <a href="http://www.testkreatic.nathanturpin.com" target="_blank"><img src="../img/kreatic.png"
+                        alt="elena-project" /></a>
+            </div>
+        </section>
+
+        <section class="projects appVue" id="appVue" v-if="appVueToggle">
+            <div class="travelly">
+                <h2>CV VUE JS</h2>
+                <a href="http://sitecvvuejs.nathanturpin.com/" target="_blank"><img src="../img/siteCVVuejs.png"
+                        alt="Application VUE JS site cv" /></a>
+            </div>
+            <div class="travelly">
+                <h2>RPG</h2>
+                <a href="http://rpg1.nathanturpin.com/partie" target="_blank"><img src="../img/rpg.png"
+                        alt="Application VUE JS RPG" /></a>
+            </div>
+            <div class="travelly">
+                <h2>API REST Meteo </h2>
+                <a href="http://meteo.nathanturpin.com/meteo" target="_blank"> <img src="../img/meteo.png"
+                        alt="Application VUE JS API REST Meteo" /></a>
+            </div>
+            <div class="travelly">
+                <h2>Todo </h2>
+                <a href="http://www.app.nathanturpin.com/gestionnaire/" target="_blank"><img src="../img/todo.png"
+                        alt="Application VUE JS Todo" /></a>
+            </div>
+        </section>
+
+        <section class="projets adobe" id="adobeID" v-if="adobeToggle">
+            <div class="travelly">
+                <img src="../img/PG-1.png" alt="Suite Adobe" />
+            </div>
+            <div class="travelly">
+                <img src="../img/portail-1.png" alt="Suite Adobe" />
+            </div>
+            <div class="travelly">
+                <img src="../img/Affiche-Prgm2-1.png" alt="Suite Adobe" />
+            </div>
+            <div class="travelly">
+                <img src="../img/Final-psd-1.png" alt="Suite Adobe" />
+            </div>
+            <div class="travelly">
+                <img src="../img/Logos-1.png" alt="Suite Adobe" />
+            </div>
+            <div class="travelly">
+                <img src="../img/Photoshop_3-1.png" alt="Suite Adobe" />
+            </div>
+            <div class="travelly">
+                <img src="../img/Photoshop_4-1.png" alt="Suite Adobe" />
+            </div>
+        </section>
+        <section class="projets cm" id="cm" v-if="cmToggle">
+            <div class="travelly">
+                <img src="../img/7erreurInsta.png" alt="CM HEPH" />
+            </div>
+            <div class="travelly">
+                <img src="../img/enviTw.png" alt="CM HEPH" />
+            </div>
+            <div class="travelly">
+                <img src="../img/nego1FB.png" alt="CM HEPH" />
+            </div>
+            <div class="travelly">
+                <img src="../img/negoFB.png" alt="CM HEPH" />
+            </div>
+            <div class="travelly">
+                <img src="../img/negoInsta.png" alt="CM HEPH" />
+            </div>
+            <div class="travelly">
+                <img src="../img/negoTw.png" alt="CM HEPH" />
+            </div>
+        </section>
+
+    </main>
+    <script src="/app.js"></script>
+</body>
+
+</html>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            toggle: false,
+            appVueToggle: false,
+            adobeToggle: false,
+            cmToggle: false,
+
+        },
+        methods: {
+            siteWeb() {
+                this.toggle = !this.toggle,
+                    this.appVueToggle = false,
+                    this.adobeToggle = false,
+                    this.cmToggle = false
+
+
+            },
+            appVue() {
+                this.appVueToggle = !this.appVueToggle,
+                    this.toggle = false,
+                    this.adobeToggle = false,
+                    this.cmToggle = false
+
+
+            },
+            adobe() {
+                this.adobeToggle = !this.adobeToggle,
+                    this.toggle = false,
+                    this.appVueToggle = false,
+                    this.cmToggle = false
+
+
+            },
+            cm() {
+                this.cmToggle = !this.cmToggle,
+                    this.toggle = false,
+                    this.adobeToggle = false,
+                    this.appVueToggle = false
+
+
+            }
+        }
+    })
+</script>
